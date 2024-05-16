@@ -1,0 +1,6 @@
+pandas
+matplotlib
+statsmodels
+streamlit
+numpy
+
