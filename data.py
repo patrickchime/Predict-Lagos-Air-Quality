@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import streamlit as st
 from statsmodels.tsa.statespace.sarimax import SARIMAX
-from sklearn.metrics import mean_absolute_error
 
 
 # Define a function to read data
@@ -223,11 +222,7 @@ def make_prediction():
 
     # Predict
     pred = fitted_model.forecast(steps=len(y_test))
-
-    # Calculate the mean absolute error 
-    mae = mean_absolute_error(y_test, pred)
-    st.sidebar.title("Evaluation Metric")
-    st.sidebar.write(f"Mean Absolute Error: {round(mae,2)} µg/m3")
+   
     
     return fitted_model
 
